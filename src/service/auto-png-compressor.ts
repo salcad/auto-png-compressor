@@ -2,7 +2,7 @@ import chokidar, { FSWatcher } from 'chokidar';
 import { exec } from 'child_process';
 import path from 'path';
 import { unlink } from 'fs';
-import { getFileSizeInKB } from '../lib/file-util';
+import { getFileSizeInKB } from '../lib/file-util.js';
 
 class AutoPngCompressor {
   private watchedDir: string;

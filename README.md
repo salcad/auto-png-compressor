@@ -4,6 +4,8 @@ This project provides a tool to automatically compress PNG files in a specified 
 
 The need to support ES modules in this application primarily stems from the fact that `pngquant-bin` is an ES module. ES modules use a different syntax and have different behaviors compared to CommonJS modules, which is why ts-node and TypeScript need to be configured to handle ES modules correctly. 
 
+ES Modules require either the file to have a .mjs extension or to set "type": "module" in package.json.
+
 ## Features
 
 - Watches a specified directory for new PNG files.
@@ -14,8 +16,20 @@ The need to support ES modules in this application primarily stems from the fact
 
 ## Prerequisites
 
-- Node.js (v14 or higher)
-- npm (Node Package Manager)
+- node.js (v20 or higher)
+- npm (v10.2.4)
+- libimagequant
+
+    #### via Homebrew for macOS, 
+    libimagequant is typically bundled with pngquant
+    ```bash
+    brew install pngquant
+    ```
+
+    #### via apt-get for Debian distributions
+    ```bash
+    sudo apt-get install libimagequant-dev
+    ```
 
 ## Installation
 

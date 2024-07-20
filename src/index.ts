@@ -1,5 +1,5 @@
-import config from './config/config';
-import AutoPngCompressor from './service/auto-png-compressor';
+import config from './config/config.js';
+import AutoPngCompressor from './service/auto-png-compressor.js';
 
 const { WATCHED_DIR, COMPRESSION_LEVEL } = config;
 
