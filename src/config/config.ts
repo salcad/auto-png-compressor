@@ -1,6 +1,19 @@
+import fs from 'fs';
+import path from 'path';
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const envFilePath = path.resolve(__dirname, '../../.env');
+
+if (fs.existsSync(envFilePath)) {
+  dotenv.config({ path: envFilePath });
+} else {
+  console.error(`Error: .env file not found at ${envFilePath}. Exiting...`);
+  process.exit(1); 
+}
 
 interface Config {
   WATCHED_DIR: string;
