@@ -35,11 +35,11 @@ class AutoPngCompressor {
   public async processFile(filePath: string): Promise<void> {
     const fileName = path.basename(filePath);
     if (path.extname(filePath).toLowerCase() === '.png' && !filePath.includes('compr')) {
-      const fileSize = getFileSizeInKB(filePath);
-      console.log(`Processing file: ${fileName} (Size: ${fileSize} KB)`);
-
       const isStable = await this.isFileStable(filePath);
       if (isStable) {
+        const fileSize = getFileSizeInKB(filePath);
+        console.log(`Processing file: ${fileName} (Size: ${fileSize} KB)`);
+        
         const outputFilePath = `${filePath.replace('.png', '')}_compr.png`;
         const outputFileName = path.basename(outputFilePath);
 

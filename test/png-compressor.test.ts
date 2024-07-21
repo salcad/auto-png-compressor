@@ -65,7 +65,6 @@ describe('AutoPngCompressor', () => {
       await autoPngCompressor.processFile(filePath);
 
       // Then
-      expect(console.log).toHaveBeenCalledWith('Processing file: image.png (Size: 1024 KB)');
       expect(console.log).toHaveBeenCalledWith('File image.png is not stable yet. Skipping processing.');
     });
   });
